@@ -1,0 +1,2 @@
+rootProject.name='Personality(MBTI) Finder'
+include ':app'

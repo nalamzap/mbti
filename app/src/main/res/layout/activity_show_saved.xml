@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ShowSaved">
+
+    <RelativeLayout
+        android:id="@+id/resultRel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#93000000"
+        android:elevation="15dp"
+        android:onClick="onClick"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/squareSaveBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:text="Select a type"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/squareSaveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="0dp"
+            android:layout_toStartOf="@+id/divider"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/find_mbti" />
+
+        <ImageButton
+            android:id="@+id/storySaveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/divider"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/find_mbti" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/getRel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="#DA353535"
+        android:elevation="15dp"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/onlineGetEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/onlineGetPassword"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="@string/e_mail"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/onlineGetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="@string/password"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/onlineGet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/onlineGetPassword"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:onClick="onClick"
+            android:text="@string/get_results" />
+    </RelativeLayout>
+
+    <com.github.florent37.shapeofview.shapes.ArcView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:elevation="10dp"
+        app:shape_arc_height="50dp"
+        app:shape_arc_position="bottom">
+
+        <TextView
+            android:id="@+id/personalityName"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="#1C1C1C"
+            android:fontFamily="@font/caveat"
+            android:gravity="bottom|center_horizontal"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/personalityCode"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_gravity="bottom"
+            android:background="#1C1C1C"
+            android:gravity="center_horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:textSize="20sp" />
+    </com.github.florent37.shapeofview.shapes.ArcView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="150dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/onlineEmail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".7"
+            android:textAlignment="center"
+            app:autoSizeTextType="uniform" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/textViewIntrovert"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center"
+                tools:ignore="NestedWeights" />
+
+            <ProgressBar
+                android:id="@+id/pbarIntrovert"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:indeterminate="false" />
+
+            <TextView
+                android:id="@+id/textViewExtrovert"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/textViewIntuitive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center"
+                tools:ignore="NestedWeights" />
+
+            <ProgressBar
+                android:id="@+id/pbarIntuitive"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:indeterminate="false" />
+
+            <TextView
+                android:id="@+id/textViewObservant"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/textViewFeeling"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center"
+                tools:ignore="NestedWeights" />
+
+            <ProgressBar
+                android:id="@+id/pbarFeeling"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:indeterminate="false" />
+
+            <TextView
+                android:id="@+id/textViewThinking"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/textViewJudging"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center"
+                tools:ignore="NestedWeights" />
+
+            <ProgressBar
+                android:id="@+id/pbarJudging"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:indeterminate="false" />
+
+            <TextView
+                android:id="@+id/textViewProspecting"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/textViewTurbulent"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center"
+                tools:ignore="NestedWeights" />
+
+            <ProgressBar
+                android:id="@+id/pbarTurbulent"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:indeterminate="false" />
+
+            <TextView
+                android:id="@+id/textViewAssertive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/kayp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:fontFamily="@font/caveat"
+            android:onClick="onClick"
+            android:text="@string/know_about_this_personality"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="onClick"
+                android:text="Change email or password"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.3"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/share"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:onClick="onClick"
+                android:text="@string/share_the_result"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.2"
+                android:gravity="center"
+                android:text="@string/we_always_want_to_be_understood_n_now_is_your_time" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
