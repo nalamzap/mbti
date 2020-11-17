@@ -165,6 +165,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="30dp"
+                android:visibility="gone"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 

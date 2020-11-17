@@ -294,6 +294,7 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:text="Comments"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -375,18 +376,5 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="#636363"
-        android:text="i"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/data00" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
