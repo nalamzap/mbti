@@ -238,16 +238,6 @@
                     app:autoSizeMinTextSize="14sp"
                     app:autoSizeTextType="uniform" />
 
-                <TextView
-                    android:id="@+id/t_a"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="start|center_vertical"
-                    android:textColor="#FFBFBFBF"
-                    app:autoSizeMaxTextSize="25sp"
-                    app:autoSizeMinTextSize="14sp"
-                    app:autoSizeTextType="uniform" />
             </LinearLayout>
 
             <LinearLayout
@@ -305,16 +295,6 @@
                     app:autoSizeMinTextSize="14sp"
                     app:autoSizeTextType="uniform" />
 
-                <TextView
-                    android:id="@+id/t_aP"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|end"
-                    android:textColor="#FFFFFF"
-                    app:autoSizeMaxTextSize="25sp"
-                    app:autoSizeMinTextSize="14sp"
-                    app:autoSizeTextType="uniform" />
             </LinearLayout>
 
 

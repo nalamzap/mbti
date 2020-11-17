@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowSaved"></activity>
+        <activity android:name=".ShowSaved" />
         <activity android:name=".Personalities" />
         <activity android:name=".ShareResult" />
         <activity android:name=".Mbti" />

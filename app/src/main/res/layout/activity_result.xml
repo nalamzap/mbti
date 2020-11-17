@@ -279,37 +279,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <TextView
-                android:id="@+id/textViewTurbulent"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".75"
-                android:gravity="center" />
-
-            <ProgressBar
-                android:id="@+id/pbarTurbulent"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5"
-                android:indeterminate="false" />
-
-            <TextView
-                android:id="@+id/textViewAssertive"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".75"
-                android:gravity="center" />
-
-        </LinearLayout>
-
         <Button
             android:id="@+id/kayp"
             android:layout_width="wrap_content"

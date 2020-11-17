@@ -1,5 +1,6 @@
 package in.zerene.personality_finder;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -34,7 +35,7 @@ public class ShareResult extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CODE = 1;
 
     EditText nameText;
-    TextView name,mbti,personality,desc,ie,iep,ns,nsp,ft,ftp,jp,jpp,ta,tap;
+    TextView name,mbti,personality,desc,ie,iep,ns,nsp,ft,ftp,jp,jpp;
     Button save;
     @SuppressLint("SetTextI18n")
     @Override
@@ -61,8 +62,6 @@ public class ShareResult extends AppCompatActivity {
         ftp = findViewById(R.id.f_tP);
         jp = findViewById(R.id.j_p);
         jpp = findViewById(R.id.j_pP);
-        ta = findViewById(R.id.t_a);
-        tap = findViewById(R.id.t_aP);
 
         mbti.setText(getIntent().getStringExtra("code"));
         personality.setText(getIntent().getStringExtra("name"));
@@ -70,7 +69,6 @@ public class ShareResult extends AppCompatActivity {
         nsp.setText(getIntent().getIntExtra("ns",0)+"%");
         ftp.setText(getIntent().getIntExtra("ft",0)+"%");
         jpp.setText(getIntent().getIntExtra("jp",0)+"%");
-        tap.setText(getIntent().getIntExtra("ta",0)+"%");
 
         String code = getIntent().getStringExtra("code");
 
@@ -82,74 +80,56 @@ public class ShareResult extends AppCompatActivity {
         else ft.setText("Thinking");
         if (code.charAt(3) == 'J') jp.setText("Judging");
         else jp.setText("Prospecting");
-        if (code.charAt(5) == 'T') ta.setText("Turbulent");
-        else ta.setText("Assertive");
 
         String desc;
 
         switch(code){
-            case "INFJ-T":
-            case "INFJ-A":
+            case "INFJ":
                 desc = getString(R.string.infjDESC);
                 break;
-            case "INFP-T":
-            case "INFP-A":
+            case "INFP":
                 desc = getString(R.string.infpDESC);
                 break;
-            case "INTJ-T":
-            case "INTJ-A":
+            case "INTJ":
                 desc = getString(R.string.intjDESC);
                 break;
-            case "INTP-T":
-            case "INTP-A":
+            case "INTP":
                 desc = getString(R.string.intpDESC);
                 break;
-            case "ISFJ-T":
-            case "ISFJ-A":
+            case "ISFJ":
                 desc = getString(R.string.isfjDESC);
                 break;
-            case "ISFP-T":
-            case "ISFP-A":
+            case "ISFP":
                 desc = getString(R.string.isfpDESC);
                 break;
-            case "ISTJ-T":
-            case "ISTJ-A":
+            case "ISTJ":
                 desc = getString(R.string.istjDESC);
                 break;
-            case "ISTP-T":
-            case "ISTP-A":
+            case "ISTP":
                 desc = getString(R.string.istpDESC);
                 break;
-            case "ENFJ-T":
-            case "ENFJ-A":
+            case "ENFJ":
                 desc = getString(R.string.enfjDESC);
                 break;
-            case "ENFP-T":
-            case "ENFP-A":
+            case "ENFP":
                 desc = getString(R.string.enfpDESC);
                 break;
-            case "ENTJ-T":
-            case "ENTJ-A":
+            case "ENTJ":
                 desc = getString(R.string.entjDESC);
                 break;
-            case "ENTP-T":
-            case "ENTP-A":
+            case "ENTP":
                 desc = getString(R.string.entpDESC);
                 break;
-            case "ESFJ-T":
-            case "ESFJ-A":
+            case "ESFJ":
                 desc = getString(R.string.esfjDESC);
                 break;
-            case "ESFP-T":
-            case "ESFP-A":
+            case "ESFP":
                 desc = getString(R.string.esfpDESC);
                 break;
-            case "ESTJ-T":
-            case "ESTJ-A":
+            case "ESTJ":
                 desc = getString(R.string.estjDESC);
                 break;
-            case "ESTP-T":
-            case "ESTP-A":
+            case "ESTP":
                 desc = getString(R.string.estpDESC);
                 break;
             default:
@@ -173,8 +153,7 @@ public class ShareResult extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.length()==0) save.setEnabled(false);
-                else save.setEnabled(true);
+                save.setEnabled(s.length() != 0);
                 name.setText(s.toString());
             }
         });
@@ -271,7 +250,7 @@ public class ShareResult extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String permissions[], @NonNull int[] grantResults) {
         if (requestCode == PERMISSION_REQUEST_CODE) {
             if (!(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 Toast.makeText(this, "Write External Storage permission allows us to store images. Please allow this permission in app settings", Toast.LENGTH_SHORT).show();

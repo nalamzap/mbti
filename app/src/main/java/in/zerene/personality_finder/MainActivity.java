@@ -18,20 +18,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        switch(view.getId()){
-            case R.id.aboutMBTI :
-                activityAboutMBTI();
-                break;
-
-            case R.id.takeTestCard :
-                activityPersonalityTest();
-                break;
-            case R.id.personalities:
-                _16personalities();
-                break;
-            case R.id.getSaved:
-                savedActivity();
-
+        int id = view.getId();
+        if (id == R.id.aboutMBTI) {
+            activityAboutMBTI();
+        } else if (id == R.id.takeTestCard) {
+            activityPersonalityTest();
+        } else if (id == R.id.personalities) {
+            _16personalities();
+        } else if (id == R.id.getSaved) {
+            savedActivity();
         }
     }
 

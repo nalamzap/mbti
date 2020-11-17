@@ -102,7 +102,7 @@ public class Personalities extends AppCompatActivity {
         data = new String[][][]{
                 {
                     {
-                        "Architect","INTJ-A / INTJ-T","Introvert","Intuitive","Thinking","Judging","2.1%",
+                        "Architect","INTJ","Introvert","Intuitive","Thinking","Judging","2.1%",
                         "Architects, ever independent, remain free from the expectations of others. This allows them to pursue their own interesting and fresh ideas."
                     },
                     {
@@ -474,7 +474,7 @@ public class Personalities extends AppCompatActivity {
                                     " attention, they are likely to be disappointed. Those things rarely work with Architects."
                     }
                 },
-                {{"Logician","INTP-A / INTP-T","Introvert","Intuitive","Thinking","Prospecting","3.3%",
+                {{"Logician","INTP","Introvert","Intuitive","Thinking","Prospecting","3.3%",
                         "Logicians are known for their brilliant theories and unrelenting logic – in fact, they are considered the most logically precise of all the personality types."},
                         {
                                 "Introduction",
@@ -595,7 +595,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Commander","ENTJ-A / ENTJ-T","Extrovert","Intuitive","Thinking","Judging","1.8%",
+                {{"Commander","ENTJ","Extrovert","Intuitive","Thinking","Judging","1.8%",
                         "The underlying thought running through the Commander mind might be something like \"I don’t care if you call me an insensitive b*****d, as long as I remain an efficient b*****d\"."},
                         {
                                 "Introduction",
@@ -704,7 +704,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Debater","ENTP-A / ENTP-T","Extrovert","Intuitive","Thinking","Prospecting","3.2%",
+                {{"Debater","ENTP","Extrovert","Intuitive","Thinking","Prospecting","3.2%",
                         "An odd juxtaposition arises with Debaters, as they are uncompromisingly honest, but will argue tirelessly for something they don’t actually believe in, stepping into another’s shoes to argue a truth from another perspective."},
                         {
                                 "Introduction",
@@ -831,7 +831,7 @@ public class Personalities extends AppCompatActivity {
 
 
 
-                {{"Advocate","INFJ-A / INFJ-T","Introvert","Intuitive","Feeling","Judging","1.2%",
+                {{"Advocate","INFJ","Introvert","Intuitive","Feeling","Judging","1.2%",
                         "Nothing lights up Advocates like creating a solution that changes people’s lives."},
                         {
                                 "Introduction",
@@ -987,7 +987,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Mediator","INFP-A / INFP-T","Introvert","Intuitive","Feeling","Prospecting","4.4%",
+                {{"Mediator","INFP","Introvert","Intuitive","Feeling","Prospecting","4.4%",
                         "Mediators have a talent for self-expression, revealing their beauty and their secrets through metaphors and fictional characters."},
                         {
                                 "Introduction",
@@ -1097,7 +1097,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Protagonist","ENFJ-A / ENFJ-T","Extrovert","Intuitive","Feeling","Judging","2.5%",
+                {{"Protagonist","ENFJ","Extrovert","Intuitive","Feeling","Judging","2.5%",
                         "Protagonists are genuine, caring people who talk the talk and walk the walk, and nothing makes them happier than leading the charge, uniting and motivating their team with infectious enthusiasm."},
                         {
                                 "Introduction",
@@ -1197,7 +1197,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Campaigner","ENFP-A / ENFP-T","Extrovert","Intuitive","Feeling","Prospecting","8.1%",
+                {{"Campaigner","ENFP","Extrovert","Intuitive","Feeling","Prospecting","8.1%",
                         "Campaigners are fiercely independent, and much more than stability and security, they crave creativity and freedom."},
                         {
                                 "Introduction",
@@ -1309,7 +1309,7 @@ public class Personalities extends AppCompatActivity {
 
 
 
-                {{"Logistician","ISTJ-A / ISTJ-T","Introvert","Sensing","Thinking","Judging","11.6%",
+                {{"Logistician","ISTJ","Introvert","Sensing","Thinking","Judging","11.6%",
                         "Logisticians have sharp, fact-based minds, and prefer autonomy and self-sufficiency to reliance on someone or something."},
                         {
                                 "Introduction",
@@ -1427,7 +1427,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Defender","ISFJ-A / ISFJ-T","Introvert","Sensing","Feeling","Judging","13.8%",
+                {{"Defender","ISFJ","Introvert","Sensing","Feeling","Judging","13.8%",
                         "Defenders are true altruists, meeting kindness with kindness-in-excess and engaging the work and people they believe in with enthusiasm and generosity."},
                         {
                                 "Introduction",
@@ -1543,7 +1543,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Executive","ESTJ-A / ESTJ-T","Extrovert","Sensing","Thinking","Judging","8.7%",
+                {{"Executive","ESTJ","Extrovert","Sensing","Thinking","Judging","8.7%",
                         "Executives are classic images of the model citizen: they help their neighbors, uphold the law, and try to make sure that everyone participates in the communities and organizations they hold so dear."},
                         {
                                 "Introduction",
@@ -1651,7 +1651,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Consul","ESFJ-A / ESFJ-T","Extrovert","Sensing","Feeling","Judging","12.3%",
+                {{"Consul","ESFJ","Extrovert","Sensing","Feeling","Judging","12.3%",
                         "At their hearts, Consul personalities are social creatures, and thrive on staying up to date with what their friends are doing."},
                         {
                                 "Introduction",
@@ -1765,7 +1765,7 @@ public class Personalities extends AppCompatActivity {
 
 
 
-                {{"Virtuoso","ISTP-A / ISTP-T","Introvert","Sensing","Thinking","Prospecting","5.4%",
+                {{"Virtuoso","ISTP","Introvert","Sensing","Thinking","Prospecting","5.4%",
                         "Rather than some sort of vision quest though, Virtuosos are merely exploring the viability of a new interest when they make these seismic shifts."},
                         {
                                 "Introduction",
@@ -1880,7 +1880,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Adventurer","ISFP-A / ISFP-T","Introvert","Sensing","Feeling","Prospecting","8.8%",
+                {{"Adventurer","ISFP","Introvert","Sensing","Feeling","Prospecting","8.8%",
                         "Adventurers always know just the compliment to soften a heart that’s getting ready to call their risks irresponsible or reckless."},
                         {
                                 "Introduction",
@@ -2002,7 +2002,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Entrepreneur","ESTP-A / ESTP-T","Extrovert","Sensing","Thinking","Prospecting","4.3%",
+                {{"Entrepreneur","ESTP","Extrovert","Sensing","Thinking","Prospecting","4.3%",
                         "Sometimes Entrepreneurs’ instantaneous observation and action is just what’s required, as in some corporate environments, and especially in emergencies."},
                         {
                                 "Introduction",
@@ -2109,7 +2109,7 @@ public class Personalities extends AppCompatActivity {
 
                         }
                 },
-                {{"Entertainer","ESFP-A / ESFP-T","Extrovert","Sensing","Feeling","Prospecting","8.5%",
+                {{"Entertainer","ESFP","Extrovert","Sensing","Feeling","Prospecting","8.5%",
                         "There’s nothing that makes Entertainers feel quite as unhappy as realizing that they are boxed in by circumstance, unable to join their friends."},
                         {
                                 "Introduction",

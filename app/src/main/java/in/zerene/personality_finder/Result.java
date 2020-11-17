@@ -21,9 +21,9 @@ import java.util.regex.Pattern;
 
 public class Result extends AppCompatActivity {
 
-    ProgressBar progressBarI,progressBarN,progressBarF,progressBarJ,progressBarT;
+    ProgressBar progressBarI,progressBarN,progressBarF,progressBarJ;
     TextView textViewIntrovert,textViewExtrovert,textViewIntuitive,textViewObservant,textViewFeeling,
-            textViewThinking,textViewJudging,textViewProspecting,textViewTurbulent,textViewAssertive,
+            textViewThinking,textViewJudging,textViewProspecting,
 
             pCode,pName;
 
@@ -39,18 +39,16 @@ public class Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        vals = new int[5];
+        vals = new int[4];
         vals[0] = getIntent().getIntExtra("introvert",50);
         vals[1] = getIntent().getIntExtra("intuitive",50);
         vals[2] = getIntent().getIntExtra("feeling",50);
         vals[3] = getIntent().getIntExtra("judging",50);
-        vals[4] = getIntent().getIntExtra("turbulent",50);
 
         progressBarI = findViewById(R.id.pbarIntrovert);
         progressBarN = findViewById(R.id.pbarIntuitive);
         progressBarF = findViewById(R.id.pbarFeeling);
         progressBarJ = findViewById(R.id.pbarJudging);
-        progressBarT = findViewById(R.id.pbarTurbulent);
 
         textViewIntrovert = findViewById(R.id.textViewIntrovert);
         textViewExtrovert = findViewById(R.id.textViewExtrovert);
@@ -60,8 +58,6 @@ public class Result extends AppCompatActivity {
         textViewThinking = findViewById(R.id.textViewThinking);
         textViewJudging = findViewById(R.id.textViewJudging);
         textViewProspecting = findViewById(R.id.textViewProspecting);
-        textViewTurbulent = findViewById(R.id.textViewTurbulent);
-        textViewAssertive = findViewById(R.id.textViewAssertive);
 
         pCode = findViewById(R.id.personalityCode);
         pName = findViewById(R.id.personalityName);
@@ -117,99 +113,71 @@ public class Result extends AppCompatActivity {
         }
         textViewJudging.setText(MessageFormat.format("{0}{1}{2}", getString(R.string.text_judging), vals[3],"%"));
         textViewProspecting.setText(MessageFormat.format("{0}{1}{2}", getString(R.string.text_prospecting), 100-vals[3],"%"));
-        if(vals[4]==50) vals[4] = 51;
-        if(vals[4]>50){
-            progressBarT.setProgress(vals[4]);
-            personalityCode = personalityCode.concat("-T");
-        }
-        else {
-            progressBarT.setProgress(100-vals[4]);
-            progressBarT.setRotation(180.0f);
-            personalityCode = personalityCode.concat("-A");
-        }
-        textViewTurbulent.setText(MessageFormat.format("{0}{1}{2}", getString(R.string.text_turbulent), vals[4],"%"));
-        textViewAssertive.setText(MessageFormat.format("{0}{1}{2}", getString(R.string.text_assertive), 100-vals[4],"%"));
 
         pCode.setText(personalityCode);
 
         switch(personalityCode){
-            case "INFJ-T":
-            case "INFJ-A":
+            case "INFJ":
                 personalityName = "Advocate";
                 pos = 4;
                 break;
-            case "INFP-T":
-            case "INFP-A":
+            case "INFP":
                 personalityName = "Mediator";
                 pos = 5;
                 break;
-            case "INTJ-T":
-            case "INTJ-A":
+            case "INTJ":
                 personalityName = "Architect";
                 pos = 0;
                 break;
-            case "INTP-T":
-            case "INTP-A":
+            case "INTP":
                 personalityName = "Logician";
                 pos = 1;
                 break;
-            case "ISFJ-T":
-            case "ISFJ-A":
+            case "ISFJ":
                 personalityName = "Defender";
                 pos = 9;
                 break;
-            case "ISFP-T":
-            case "ISFP-A":
+            case "ISFP":
                 personalityName = "Adventurer";
                 pos = 13;
                 break;
-            case "ISTJ-T":
-            case "ISTJ-A":
+            case "ISTJ":
                 personalityName = "Logistician";
                 pos = 8;
                 break;
-            case "ISTP-T":
-            case "ISTP-A":
+            case "ISTP":
                 personalityName = "Virtuoso";
                 pos = 12;
                 break;
-            case "ENFJ-T":
-            case "ENFJ-A":
+            case "ENFJ":
                 personalityName = "Protagonist";
                 pos = 6;
                 break;
-            case "ENFP-T":
-            case "ENFP-A":
+            case "ENFP":
                 personalityName = "Campaigner";
                 pos = 7;
                 break;
-            case "ENTJ-T":
-            case "ENTJ-A":
+            case "ENTJ":
                 personalityName = "Commander";
                 pos = 2;
                 break;
-            case "ENTP-T":
-            case "ENTP-A":
+            case "ENTP":
                 personalityName = "Debater";
                 pos = 3;
                 break;
-            case "ESFJ-T":
-            case "ESFJ-A":
+            case "ESFJ":
                 personalityName = "Consul";
                 pos = 11;
                 break;
-            case "ESFP-T":
-            case "ESFP-A":
+            case "ESFP":
                 personalityName = "Entertainer";
                 pos = 15;
                 break;
-            case "ESTJ-T":
-            case "ESTJ-A":
+            case "ESTJ":
                 personalityName = "Executive";
                 pos = 10;
                 break;
-            case "ESTP-T":
-            case "ESTP-A":
+            case "ESTP":
                 personalityName = "Entrepreneur";
                 pos = 14;
                 break;
@@ -221,31 +189,23 @@ public class Result extends AppCompatActivity {
 
 
     public void onClick(View view){
-        switch (view.getId()){
-            case R.id.share:
-                shareRel.setVisibility(View.VISIBLE);
-                break;
-            case R.id.resultRel:
-                shareRel.setVisibility(View.GONE);
-                break;
-            case R.id.squareSaveBtn:
-                deviceSave(false);
-                break;
-            case R.id.storySaveBtn:
-                deviceSave(true);
-                break;
-            case R.id.save:
-                findViewById(R.id.saveRel).setVisibility(View.VISIBLE);
-                break;
-            case R.id.onlineSave:
-                onlineSave();
-                break;
-            case R.id.saveRel:
-                view.setVisibility(View.GONE);
-                break;
-            case R.id.kayp:
-                kayp();
-
+        int id = view.getId();
+        if (id == R.id.share) {
+            shareRel.setVisibility(View.VISIBLE);
+        } else if (id == R.id.resultRel) {
+            shareRel.setVisibility(View.GONE);
+        } else if (id == R.id.squareSaveBtn) {
+            deviceSave(false);
+        } else if (id == R.id.storySaveBtn) {
+            deviceSave(true);
+        } else if (id == R.id.save) {
+            findViewById(R.id.saveRel).setVisibility(View.VISIBLE);
+        } else if (id == R.id.onlineSave) {
+            onlineSave();
+        } else if (id == R.id.saveRel) {
+            view.setVisibility(View.GONE);
+        } else if (id == R.id.kayp) {
+            kayp();
         }
     }
 
@@ -260,8 +220,7 @@ public class Result extends AppCompatActivity {
                 db.child("ie").setValue(vals[0]);
                 db.child("ns").setValue(vals[1]);
                 db.child("ft").setValue(vals[2]);
-                db.child("jp").setValue(vals[3]);
-                db.child("ta").setValue(vals[4]).addOnSuccessListener(new OnSuccessListener<Void>() {
+                db.child("jp").setValue(vals[3]).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(Result.this, "Saved!", Toast.LENGTH_SHORT).show();
@@ -292,7 +251,6 @@ public class Result extends AppCompatActivity {
         intent.putExtra("ns", Math.max(vals[1], 100 - vals[1]));
         intent.putExtra("ft", Math.max(vals[2], 100 - vals[2]));
         intent.putExtra("jp", Math.max(vals[3], 100 - vals[3]));
-        intent.putExtra("ta", Math.max(vals[4], 100 - vals[4]));
         startActivity(intent);
     }
 }

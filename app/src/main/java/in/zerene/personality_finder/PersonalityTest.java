@@ -42,8 +42,8 @@ public class PersonalityTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personality_test);
 
-        q = new String[60];
-        ans = new byte[60][2];
+        q = new String[48];
+        ans = new byte[48][2];
         database = FirebaseDatabase.getInstance().getReference("mbti");
         database.addListenerForSingleValueEvent(eventListener);
 
@@ -184,16 +184,12 @@ public class PersonalityTest extends AppCompatActivity {
                     if (c1 != c) j -= ansMarks[c1];
                     j += val;
                     break;
-                case 4:
-                    if (c1 != c) t -= ansMarks[c1];
-                    t += val;
-                    break;
             }
             ansMarks[c1] = val;
             if (c == c1) {
                 c++;
                 c1 = c;
-                prog += (100.0f / 60.0f);
+                prog += (100.0f / 48.0f);
                 progressBar.setProgress(Math.round(prog));
                 textProgress.setText("Progress " + progressBar.getProgress() + "%");
                 next.setVisibility(View.INVISIBLE);
@@ -204,7 +200,7 @@ public class PersonalityTest extends AppCompatActivity {
                 if (c1 == c) next.setVisibility(View.INVISIBLE);
                 prev.setVisibility(View.VISIBLE);
             }
-            if (c == 60) showResult();
+            if (c == 48) showResult();
             else {
                 question.setText(q[c1]);
 
@@ -250,7 +246,6 @@ public class PersonalityTest extends AppCompatActivity {
         intent.putExtra("intuitive",Math.round(n));
         intent.putExtra("feeling",Math.round(f));
         intent.putExtra("judging",Math.round(j));
-        intent.putExtra("turbulent",Math.round(t));
         startActivity(intent);
         finish();
 
